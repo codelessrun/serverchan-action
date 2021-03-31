@@ -1,0 +1,23 @@
+name: 'Server酱通知'
+description: '利用server酱（sc.ftqq.com）发通知'
+author: '无码 <dev@codeless.run>'
+branding:
+  icon: message-square
+  color: blue
+
+inputs:
+  sendKey:
+    description: 'server酱的 SendKey'
+    required: true
+  text:
+    description: '消息模板的标题'
+    required: true
+  desp:
+    description: '消息的内容'
+    required: false
+
+runs:
+  using: 'composite'
+  steps:
+    - run: curl https://sc.ftqq.com/${{ inputs.sendKey }}.send?text=${{ inputs.text }}&desp=${{ inputs.desp }}
+      shell: bash
