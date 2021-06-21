@@ -19,5 +19,5 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: curl https://sc.ftqq.com/${{ inputs.sendKey }}.send?text=${{ inputs.text }}&desp=${{ inputs.desp }}
+    - run: curl https://sctapi.ftqq.com/${{ inputs.sendKey }}.send?text=${{ inputs.text }}&desp=${{ inputs.desp }}
       shell: bash

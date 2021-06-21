@@ -12,9 +12,21 @@
 
 
 例如：
+
+使用普通版
 ```
 - name: 通知
   uses: codelessrun/serverchan-action@v1
+  with:
+    sendKey: ${{ secrets.sendKey }}
+    text: your text
+    desp: your desp
+```
+
+使用 Turbo 版本
+```
+- name: 通知
+  uses: codelessrun/serverchan-action@turbo
   with:
     sendKey: ${{ secrets.sendKey }}
     text: your text
